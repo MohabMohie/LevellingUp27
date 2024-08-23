@@ -41,8 +41,19 @@ public class Task3Tests {
          * //tagName[@attribute1='value1' or @attribute2='value2']
          *
          * //tagName[@attribute]
+         * //tagName
          * //*[@attribute='value']
          *
+         * //tagName[text()='']
+         * //tagName[contains(@attribute,'value')]
+         * //tagName[contains(text(),'value')]
+         * //tagName[contains(.,'value')]
+         *
+         * //tagName[@attribute='value']/tagName[@attribute='value']
+         * //tagName[@attribute='value']//tagName[@attribute='value']
+         *
+         * //tagName[index]
+         * (//tagName[@attribute])[index]
          *
          * Dynamic XPATH
          *
