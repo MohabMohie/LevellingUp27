@@ -38,14 +38,14 @@ public class Task4Tests {
                 .ignoring(StaleElementReferenceException.class);
 
         wait.until(d -> {
-            By fourthResultText = By.xpath("//article//h2//span");
+            By fourthResultText = By.xpath("(//article)[4]//h2");
+            //  (//article)[4]//h2
+            //  (//article//h2)[4]
             String actual = driver.findElement(fourthResultText).getText();
             Assert.assertEquals(actual,"TestNG Tutorial");
             return true;
         });
 
         driver.quit();
-
-
     }
 }
