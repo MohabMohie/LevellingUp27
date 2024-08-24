@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.linear;
 
 import org.testng.annotations.*;
 

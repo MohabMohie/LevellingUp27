@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.linear;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
