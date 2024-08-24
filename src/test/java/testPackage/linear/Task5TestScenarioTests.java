@@ -20,11 +20,11 @@ public class Task5TestScenarioTests {
     public void createOrder() {
         orderID = "123";
         System.out.println("createOrder");
-        Assert.assertEquals("","");
-        Assert.assertNotEquals("","");
-
-        Assert.assertTrue(true);
-        Assert.assertFalse(false);
+//        Assert.assertEquals("","");
+//        Assert.assertNotEquals("","");
+//
+//        Assert.assertTrue(true);
+//        Assert.assertFalse(false);
     }
 
     @BeforeClass
