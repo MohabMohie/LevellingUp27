@@ -35,7 +35,8 @@ public class Task4Tests {
                 .pollingEvery(Duration.ofMillis(300))
                 .ignoring(NotFoundException.class)
                 .ignoring(ElementNotInteractableException.class)
-                .ignoring(StaleElementReferenceException.class);
+                .ignoring(StaleElementReferenceException.class)
+                .ignoring(AssertionError.class);
 
         wait.until(d -> {
             By fourthResultText = By.xpath("(//article)[4]//h2");
