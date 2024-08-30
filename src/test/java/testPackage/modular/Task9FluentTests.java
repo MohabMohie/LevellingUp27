@@ -13,7 +13,7 @@ import pom.pages.Results;
 
 import java.time.Duration;
 
-public class Task8Tests {
+public class Task9FluentTests {
     WebDriver driver;
     Wait<WebDriver> wait;
 
@@ -22,14 +22,9 @@ public class Task8Tests {
 
     @Test
     public void checkFirstSearchResultLink(){
-        String searchQuery = "Selenium WebDriver";
-        landingPage.search(searchQuery);
-
-        wait.until(d -> {
-            String actualLink = resultsPage.getFirstResultLink();
-            Assert.assertEquals(actualLink, "https://www.selenium.dev/documentation/webdriver/");
-            return true;
-        });
+        new fluent.pages.Landing(driver).navigate()
+                .search("Selenium WebDriver")
+                .checkResultLink(1, "https://www.selenium.dev/documentation/webdriver/");
     }
 
     @Test

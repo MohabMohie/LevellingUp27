@@ -46,8 +46,9 @@ public class Task3Tests {
          *
          * //tagName[text()='']
          * //tagName[contains(@attribute,'value')]
-         * //tagName[contains(text(),'value')]
-         * //tagName[contains(.,'value')]
+         * //tagName[contains(text(),'value')] ===> current node text
+         * //tagName[contains(.,'value')] ====> all nested text under all nested nodes including self
+         * //tagName[not(contains(.,'value'))]
          *
          * //tagName[@attribute='value']/tagName[@attribute='value']
          * //tagName[@attribute='value']//tagName[@attribute='value']
@@ -55,7 +56,18 @@ public class Task3Tests {
          * //tagName[index]
          * (//tagName[@attribute])[index]
          *
+         * XPATH AXIS
+         * https://www.w3schools.com/xml/xpath_axes.asp
+         * following-sibling
+         * preceding-sibling
+         * parent
+         * ancestor
+         *
          * Dynamic XPATH
+         * TaskTempTests.java
+         *
+         * Relative Locators (sel 4)
+         * https://www.selenium.dev/documentation/webdriver/elements/locators/
          *
          */
 

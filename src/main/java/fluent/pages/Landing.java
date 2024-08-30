@@ -1,22 +1,24 @@
-package pages;
+package fluent.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class Landing {
-    WebDriver driver;
-    By searchInput = By.name("q");
+    private final WebDriver driver;
+    private final By searchInput = By.name("q");
 
     public Landing(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void navigate(){
+    public Landing navigate(){
         driver.navigate().to("https://duckduckgo.com/");
+        return this;
     }
 
-    public void search(String query){
+    public fluent.pages.Results search(String query){
         driver.findElement(searchInput).sendKeys(query, Keys.ENTER);
+        return new Results(driver);
     }
 }

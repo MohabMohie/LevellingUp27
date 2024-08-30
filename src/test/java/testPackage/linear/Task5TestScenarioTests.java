@@ -1,6 +1,5 @@
 package testPackage.linear;
 
-import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class Task5TestScenarioTests {
