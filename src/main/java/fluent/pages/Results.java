@@ -12,9 +12,8 @@ public class Results {
     private final WebDriver driver;
     Wait<WebDriver> wait;
     //locators
-    private By firstLink;
+    private By anyResultLink;
     private By anyResultText;
-
     //constructor
     public Results(WebDriver driver) {
         this.driver = driver;
@@ -27,20 +26,19 @@ public class Results {
                 .ignoring(AssertionError.class);
     }
     //public methods
-    public String getFirstResultLink() {
-        return driver.findElement(firstLink).getAttribute("href");
-    }
-
-    public String getResultText(int i) {
-        anyResultText = By.xpath("(//article)["+i+"]//h2");
-        return driver.findElement(anyResultText).getText();
-    }
-
     public void checkResultLink(int index, String expectedLink){
-        firstLink = By.xpath("(//article)["+index+"]//h2/a");
+        anyResultLink = By.xpath("(//article)["+index+"]//h2/a");
         wait.until(d -> {
-            String actualLink = driver.findElement(firstLink).getAttribute("href");
+            String actualLink = driver.findElement(anyResultLink).getAttribute("href");
             Assert.assertEquals(actualLink, expectedLink);
+            return true;
+        });
+    }
+    public void checkResultText(int index, String expectedText) {
+        anyResultText = By.xpath("(//article)["+index+"]//h2");
+        wait.until(d -> {
+            String actualText = driver.findElement(anyResultText).getText();
+            Assert.assertEquals(actualText,expectedText);
             return true;
         });
     }
